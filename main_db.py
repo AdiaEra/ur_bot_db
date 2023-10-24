@@ -2,6 +2,16 @@ from DB import conn
 
 
 def add_customer(name, last_name, telephone, topic, description, date):
+    """
+    Функция добавления данных клиента
+    :param name: имя
+    :param last_name: фамилия
+    :param telephone: телефон
+    :param topic: тема вопроса
+    :param description: описание
+    :param date: дата
+    :return: Клиент добавлен
+    """
     with conn.cursor() as cur:
         select_query = """INSERT INTO customer_profile (name, last_name, telephone, topic, description, date)
                        VALUES (%s, %s, %s, %s, %s, %s)"""
